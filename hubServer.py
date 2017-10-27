@@ -1,26 +1,27 @@
 from flask import Flask
 app = Flask(__name__)
-from garage import toggleDoor, getGarageState, fakeGetGarageState
-from flask import render_template
-
-# isOpen=getGarageState()
-isOpen=False
-isMoving=False
+from hub import *
 
 
-@app.route("/garageToggle")
-def garageToggle():
-    # toggleDoor()
-    # isOpen = fakeGetGarageState(isOpen)
-    return isOpen
+@app.route("/singleStrobe")
+def callSingleStrobe():
+    return
 
-@app.route('/')
-def garageUI():
-    return render_template('garageUI.html',isOpen=isOpen)
+@app.route('/doubleStrobe')
+def callDoubleStrobe():
+    return
 
-@app.route('/test')
-def hello_world():
-    return 'Hello, World!'
+@app.route('/rainbowStrobe')
+def callRainbowStrobe():
+    return
+
+@app.route('/doubleRainbowStrobe')
+def callRainbowStrobe():
+    return
+
+@app.route('/normalize ')
+def callRainbowStrobe():
+    return
 
 
 def main():
